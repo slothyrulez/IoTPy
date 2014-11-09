@@ -1,7 +1,10 @@
+#! -*- coding: utf-8 -*-
+
 import ctypes
 from fcntl import ioctl
 import struct
 import array
+
 from IoTPy.core.spi import SPI
 from IoTPy.linux.ioctl_def import IOW
 

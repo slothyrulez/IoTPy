@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 # encoding: utf-8
+from IoTPy.core.ioboard import IoBoard
 from IoTPy.core.spi import SPI
+
 from IoTPy.pyuper.adc import UPER1_ADC
 from IoTPy.pyuper.gpio import UPER1_GPIO
 from IoTPy.pyuper.i2c import UPER1_I2C
@@ -21,7 +23,7 @@ import serial
 from IoTPy.core.utils import errmsg, IoTPy_APIError
 
 
-class IoBoard:
+class UpperIoBoard(IoBoard):
     """
     Uper type board class.
 

@@ -1,47 +1,11 @@
-from IoTPy.core.utils import IoTPy_APIError
+#! -*- coding: utf-8 -*-
+
 from IoTPy.core.pinouts import CAP_RESERVED, CAP_GPIO, CAP_ADC, CAP_PWM, CAP_SPI
 from IoTPy.core.pinouts import IoParams, IoPinout
 
-# CAP_RESERVED = 0x0
-# CAP_GPIO     = 0x1
-# CAP_ADC      = 0x2
-# CAP_PWM      = 0x4
-# CAP_SPI      = 0x8
-
-
-# class IoParams:
-#     """
-#     Class describing IO pin.
-#
-#     :param int capabilities: Integer describing pin capabilities. Can be a combination of CAP_RESERVED, CAP_GPIO, CAP_ADC, CAP_PWM and CAP_SPI.
-#     :param int pinID: Pin ID.
-#     :param str name: Pin alias name.
-#     :param list extra: Extra data for pin capabilities.
-#     """
-#
-#     def __init__(self, capabilities, pinID, name, extra=None):
-#         self.capabilities = capabilities
-#         self.pinID = pinID
-#         self.pinName = name
-#         self.extra = extra
-
-# class IoPinout(dict):
-#     """
-#     A dictionary consisting of integer keys and :class:`IoParams` values which describe board pin mapping and capabilities.
-#     """
-#
-#     def __init__(self, *args, **kw):
-#         super(IoPinout,self).__init__(*args, **kw)
-#         for key in self:
-#             if not isinstance(key, int) or not isinstance(self[key], IoParams):
-#                 raise IoTPy_APIError("IoPinout must consist of integer keys and IoParams values.")
-#
-#     def __delitem__(self, key):
-#         raise IoTPy_APIError("IoPinout can not be modified.")
-#
-#     def __setitem__(self, key, value):
-#         raise IoTPy_APIError("IoPinout can not be modified.")
-
+"""
+UPER1 PINOUT
+"""
 
 UPER1_PINOUT = IoPinout({
     1 : IoParams(CAP_GPIO,              0,  "PIO0_20"),
@@ -85,6 +49,10 @@ UPER1_PINOUT = IoPinout({
     39 : IoParams(CAP_GPIO | CAP_PWM,   17, "PIO1_25",  [1,1]),
     40 : IoParams(CAP_GPIO,             16, "PIO1_19")
 })
+
+"""
+WEIO PINOUT
+"""
 
 WEIO_PINOUT = IoPinout({
     0 : IoParams(CAP_GPIO,              20, "PIO1_13"),
