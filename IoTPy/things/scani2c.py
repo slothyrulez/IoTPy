@@ -1,6 +1,6 @@
 from IoTPy.pyuper.ioboard import IoBoard
 from IoTPy.pyuper.i2c import I2C
-from IoTPy.pyuper.utils import IoTPy_IOError, IoTPy_ThingError, IoTPy_APIError, die
+from IoTPy.core.utils import IoTPy_IOError, IoTPy_ThingError, IoTPy_APIError, die
 
 try:
 	u = IoBoard()

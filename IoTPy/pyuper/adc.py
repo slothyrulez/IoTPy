@@ -1,5 +1,5 @@
-from IoTPy.pyuper.utils import IoTPy_APIError, errmsg
-from IoTPy.pyuper.pinouts import CAP_ADC
+from IoTPy.core.utils import IoTPy_APIError, errmsg
+from IoTPy.core.pinouts import CAP_ADC
 
 from IoTPy.core.adc import ADC
 

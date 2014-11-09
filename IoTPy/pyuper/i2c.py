@@ -1,4 +1,4 @@
-from IoTPy.pyuper.utils import IoTPy_IOError, IoTPy_APIError, errmsg
+from IoTPy.core.utils import IoTPy_IOError, IoTPy_APIError, errmsg
 
 from IoTPy.core.i2c import I2C
 

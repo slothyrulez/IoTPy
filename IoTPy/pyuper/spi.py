@@ -1,4 +1,4 @@
-from IoTPy.pyuper.utils import IoTPy_APIError, errmsg
+from IoTPy.core.utils import IoTPy_APIError, errmsg
 
 from IoTPy.core.spi import SPI
 

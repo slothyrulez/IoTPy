@@ -1,6 +1,6 @@
 from IoTPy.core.pwm import PWM
-from IoTPy.pyuper.pinouts import CAP_PWM
-from IoTPy.pyuper.utils import IoTPy_APIError, errmsg
+from IoTPy.core.pinouts import CAP_PWM
+from IoTPy.core.utils import IoTPy_APIError, errmsg
 
 
 PWM_PORT_RUNNING = [{'channels': 0, 'period': 0}, {'channels': 0, 'period': 0}]

@@ -18,7 +18,7 @@ import glob
 
 import serial
 
-from IoTPy.pyuper.utils import errmsg, IoTPy_APIError
+from IoTPy.core.utils import errmsg, IoTPy_APIError
 
 
 class IoBoard:
