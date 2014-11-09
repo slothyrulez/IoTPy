@@ -13,7 +13,7 @@ from IoTPy.core.pinouts import IoParams, IoPinout
 #     """
 #     Class describing IO pin.
 #
-#     :param int capabilities: Integer describing pin capabilities. Can be a combination of CAP_CAP_RESERVED, CAP_GPIO, CAP_ADC, CAP_PWM and CAP_SPI.
+#     :param int capabilities: Integer describing pin capabilities. Can be a combination of CAP_RESERVED, CAP_GPIO, CAP_ADC, CAP_PWM and CAP_SPI.
 #     :param int pinID: Pin ID.
 #     :param str name: Pin alias name.
 #     :param list extra: Extra data for pin capabilities.
