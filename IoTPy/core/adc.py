@@ -1,6 +1,7 @@
 
 
 class ADC(object):
+
     """
     This is a template class for IoTPy modules with ADC functionality. Each such module should implement
     :class:`ADC` functions according to their description.
@@ -37,6 +38,7 @@ class ADC(object):
 
 
 class ADCProducer(object):
+
     """
     This is a template class for boards or devices that can produce an :class:`IoTPy.core.adc.ADC` module.
     """

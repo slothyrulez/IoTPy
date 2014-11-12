@@ -16,7 +16,9 @@ class Carambola2_SPI(SPIDEV):
         if not self._caramiot.create_spi(self.clock, self.mode, self.cs):
             raise RuntimeError("Could not create new SPI device.")
 
-        sleep(0.1)  # sometimes spidev doesn't open if called immediately after ioctl SPI_INIT
+        # sometimes spidev doesn't open
+        # if called immediately after ioctl SPI_INIT
+        sleep(0.1)
 
         return super(Carambola2_SPI, self).__enter__()
 

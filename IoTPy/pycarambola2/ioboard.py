@@ -8,8 +8,10 @@ import array
 
 from IoTPy.core.ioboard import IoBoard
 from IoTPy.core.gpio import GPIOProducer
+from IoTPy.core.i2c import I2CProducer
 from IoTPy.core.spi import SPI, SPIProducer
 from IoTPy.linux.gpio import LinuxGPIO
+from IoTPy.linux.i2c import LinuxI2C
 from IoTPy.linux.ioctl_def import IOW
 from IoTPy.pycarambola2.spi import Carambola2_SPI
 #from IoTPy.pycarambola2.pwm import PWM
@@ -18,7 +20,7 @@ from IoTPy.pycarambola2.spi import Carambola2_SPI
 from IoTPy.core.utils import errmsg, IoTPy_APIError
 
 
-class Carambola2IoBoard(IoBoard, GPIOProducer, SPIProducer):
+class Carambola2IoBoard(IoBoard, GPIOProducer, SPIProducer, I2CProducer):
     """
     Carambola2 type board class.
 
@@ -68,6 +70,12 @@ class Carambola2IoBoard(IoBoard, GPIOProducer, SPIProducer):
 
         return Carambola2_SPI(self._caramiot, clock, mode, cs=name)
 
+    def I2C(self, name=0, *args, **kwargs):
+        if isinstance(name, int):
+            name = "/dev/i2c-%d" % name
+
+        return LinuxI2C(name)
+
 
 class Caramiot(object):
 
@@ -91,3 +99,5 @@ class Caramiot(object):
 
     def destroy_spi(self, cs):
         ioctl(self._file, Caramiot.CARAMIOT_IOC_SPI_CLEAN, cs)
+
+

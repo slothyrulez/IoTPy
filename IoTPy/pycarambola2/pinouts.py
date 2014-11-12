@@ -1,5 +1,6 @@
 from IoTPy.core.utils import IoTPy_APIError
-from IoTPy.core.pinouts import CAP_RESERVED, CAP_GPIO, CAP_ADC, CAP_PWM, CAP_SPI
+from IoTPy.core.pinouts import (CAP_RESERVED, CAP_GPIO, CAP_ADC,
+                                CAP_PWM, CAP_SPI)
 from IoTPy.core.pinouts import IoParams, IoPinout
 
 """

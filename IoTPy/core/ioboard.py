@@ -1,6 +1,8 @@
 #! -*- coding: utf-8 -*-
 
+
 class IoBoard(object):
+
     """
     This is a template class for IoTPy boards with GPIO functionality. Each such module should implement
     :class:`GPIO` functions according to their description.
@@ -35,7 +37,6 @@ class IoBoard(object):
         Stop all communications with the board
         """
         raise NotImplementedError()
-
 
     def __enter__(self):
         raise NotImplementedError()

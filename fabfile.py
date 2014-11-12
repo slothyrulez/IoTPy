@@ -18,6 +18,15 @@ env.shell = "/bin/ash -l -c"
 if not env.hosts:
     env.hosts = ["user@hostnameorip"]
 
+def gendoc():
+    """ Generates sphinx html documentation for IoTPy """
+    with cd("./docs"):
+        local("make html")
+
+def graphs():
+    """ Generate hierarchy class library graphs """
+    local("pyreverse -Ak -o png -p IoTPy IoTPy")
+
 def upload():
     """ Uploads iotpy/ to carambola:/tmp/iotpy/ """
     local("tar -czf /tmp/iotpy.tar.gz IoTPy examples")
@@ -29,6 +38,10 @@ def upload_test():
     """ Uploads to carambola:/tmp/iotpy and run tests """
     pass
 
-def tests():
-    """ Run tests """
-    pass
+def test_pyflakes():
+        local("echo 'PYFLAKES --------' > pyflakes.log")
+        local("pyflakes IoTPy >> pyflakes.log")
+
+def test_pep8():
+        local("echo 'PEP8 --------' > pep8.log")
+        local("pep8 IoTPy --show-source --show-pep8 --statistics --count >> pep8.log")
